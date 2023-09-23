@@ -2,9 +2,8 @@
 
 <img src="https://github.com/git5loxosec/rIMGshell/blob/main/Screenshot_2023-09-22_20_08_14.png">
 ```
-# rIMGshell
 
-![GitHub](https://img.shields.io/github/license/git5loxosec/rIMGshell)
+# rIMGshell
 
 rIMGshell is a command-line tool for injecting a reverse shell command into an image and generating one-liner execution methods to exploit it.
 
