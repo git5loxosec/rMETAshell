@@ -11,7 +11,7 @@ Connection established, mission accomplished!
 
 # Description:
 
-rIMGshell is a command-line tool for injecting a reverse shell command into an image and generating one-liner execution methods to exploit it.
+rIMGshell is a command-line tool for injecting a reverse shell command into an image and generating one-liner execution methods.
 
 # How It Works:
 rIMGshell takes a reverse shell command and an image file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
