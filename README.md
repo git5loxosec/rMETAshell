@@ -31,7 +31,7 @@ Secure Communication: Execute commands remotely without revealing their presence
 1. Clone the repository:
 
    ```
-   git clone https://github.com/git5loxosec/rIMGshell.git
+   git clone https://github.com/git5loxosec/rIMGshell
    ```
 
 2. Change to the project directory:
