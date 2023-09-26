@@ -13,6 +13,9 @@ The reverse shell injection method used here wont affect the integrity of the im
 Connection established, mission accomplished!
 
 
+# New!:
+
+Supports jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx, txt!
 
 # Description:
 
