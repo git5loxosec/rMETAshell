@@ -5,6 +5,7 @@
  ![License](https://img.shields.io/badge/License-MIT-blue.svg) 
 
 
+Reverse shell metadata injection compatible with jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx and txt!.
 <img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell1.png">
 Clean image file no reverse shell.
 <img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell2.png">
