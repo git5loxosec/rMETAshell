@@ -5,7 +5,7 @@
  ![License](https://img.shields.io/badge/License-MIT-blue.svg) 
 
 
-<img src="https://github.com/git5loxosec/rMRTAshell/blob/main/github_rimgshell1.png">
+<img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell1.png">
 Clean image file no reverse shell.
 <img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell2.png">
 The reverse shell injection method used here wont affect the integrity of the image file.
