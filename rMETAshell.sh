@@ -19,6 +19,9 @@
 # X
 # https://x.com/git5loxosec
 # ------------------------------------------------
+# Facebook
+# https://www.facebook.com/profile.php?id=61551530174528
+#-------------------------------------------------
 
 show_help() {
     echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> [<zip>]"
