@@ -59,7 +59,7 @@ Text Formats: TXT, CSV, XML, and more.
 ## Usage
 
 ```
-./rMETAshell.sh [OPTIONS] <REVERSE_SHELL_COMMAND> <IMAGE_FILENAME>
+./rMETAshell.sh [OPTIONS] <REVERSE_SHELL_COMMAND> <FILENAME> <ZIP>
 ```
 
 - `[OPTIONS]` - Optional arguments.
