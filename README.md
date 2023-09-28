@@ -14,16 +14,16 @@ Connection established, mission accomplished!
 
 # New!:
 
-New one-liner execution methods!
+**New** one-liner execution methods!
 
-Supports png, jpg, jpeg, jpe, jif, jfif, jfi, jp2, j2k, jpf, jpx, jp2a, j2c, tif, tiff, crw, cr2, dng, mrw, nef, pef, arw, rw2, sr2, srw, orf, png, gif, bmp, dib, ico, pgf, jp2, j2k, jpf, jpx, jp2a, j2c, avi, mov, qt, moov, f4v, mp4, m4a, m4b, m4p, m4v, mp4v, mqv, jp2, j2k, jpf, jpx, jp2a, j2c, mpg, mpeg, m2v, mpv, m2p, m1v, m1p, m4v, divx, xvid, txt, text, log, md, markdown, html, htm, xml, json, csv, tsv, sql, yml, yaml, ini, cfg, conf, properties, prop, props, bat, sh, bash, zsh, ps1, ps, py, python, rb, ruby, perl, pl, php, js, javascript, jsx, ts, typescript, java, c, cpp, h, cs, csharp, vb, vbnet, swift, kotlin, rust, go, groovy, scala, lua, r, sas, scss, sass, less, styl, sql, plsql, psql, tsql, vbs, vba, vbscript, powershell, ps1xml, psd1, psm1, tex, latex, ltx, bib, rtf, doc, docx, xls, xlsx, ppt, pptx and pdf injection!
+**Supports** png, jpg, jpeg, jpe, jif, jfif, jfi, jp2, j2k, jpf, jpx, jp2a, j2c, tif, tiff, crw, cr2, dng, mrw, nef, pef, arw, rw2, sr2, srw, orf, png, gif, bmp, dib, ico, pgf, jp2, j2k, jpf, jpx, jp2a, j2c, avi, mov, qt, moov, f4v, mp4, m4a, m4b, m4p, m4v, mp4v, mqv, jp2, j2k, jpf, jpx, jp2a, j2c, mpg, mpeg, m2v, mpv, m2p, m1v, m1p, m4v, divx, xvid, txt, text, log, md, markdown, html, htm, xml, json, csv, tsv, sql, yml, yaml, ini, cfg, conf, properties, prop, props, bat, sh, bash, zsh, ps1, ps, py, python, rb, ruby, perl, pl, php, js, javascript, jsx, ts, typescript, java, c, cpp, h, cs, csharp, vb, vbnet, swift, kotlin, rust, go, groovy, scala, lua, r, sas, scss, sass, less, styl, sql, plsql, psql, tsql, vbs, vba, vbscript, powershell, ps1xml, psd1, psm1, tex, latex, ltx, bib, rtf, doc, docx, xls, xlsx, ppt, pptx and pdf injection!
 
 # Description:
 
 rMETAshell is a command-line tool for injecting a reverse shell command into the metadata and generating one-liner execution methods.
 
 # How It Works:
-rMETAshell takes a reverse shell command and an image, video or file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
+rMETAshell takes a reverse shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 # Features:
 Metadata-Based Shell Injection: Inject reverse shell commands into image, video, and text file metadata, ensuring seamless integration with target systems.
