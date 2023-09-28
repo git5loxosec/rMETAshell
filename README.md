@@ -23,7 +23,7 @@ Supports png, jpg, jpeg, jpe, jif, jfif, jfi, jp2, j2k, jpf, jpx, jp2a, j2c, tif
 rMETAshell is a command-line tool for injecting a reverse shell command into the metadata and generating one-liner execution methods.
 
 # How It Works:
-rMETAshell takes a reverse shell command and an image file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
+rMETAshell takes a reverse shell command and an image, video or file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 # Features:
 Metadata-Based Shell Injection: Inject reverse shell commands into image, video, and text file metadata, ensuring seamless integration with target systems.
