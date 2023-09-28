@@ -64,7 +64,8 @@ Text Formats: TXT, CSV, XML, and more.
 
 - `[OPTIONS]` - Optional arguments.
 - `<REVERSE_SHELL_COMMAND>` - The reverse shell command to inject.
-- `<IMAGE_FILENAME>` - The name of the image file.
+- `<FILENAME>` - The name of the media file.
+- `<ZIP>` -The name of the zip file where the infected file is stored.
 
 **Example:**
 
