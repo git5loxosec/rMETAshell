@@ -81,4 +81,4 @@ rMETAshell is intended for legitimate and ethical purposes, such as penetration 
 ## License
 
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [AGPL-3.0 license](LICENSE).
