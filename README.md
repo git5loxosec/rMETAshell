@@ -1,4 +1,4 @@
-# LATEST UPDATE: 7:38 PM Saturday, September 30, 2023 Coordinated Universal Time (UTC)
+# LATEST UPDATE: 11:09 PM Saturday, September 30, 2023 Coordinated Universal Time (UTC)
 # THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
 # rMETAshell - A Reverse Shell Metadata Injection and One-Liner Generation Toolkit
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/git5loxosec) [![Kali Linux Compatible](https://img.shields.io/badge/Kali%20Linux-Compatible-brightgreen)](https://www.kali.org/)
