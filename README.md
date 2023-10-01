@@ -28,9 +28,9 @@ One-Liner Generation: Automatically generate one-liners for quick and efficient 
 
 Supported File Formats: rMETAshell supports the following file formats for shell injection and one-liner generation:
 
-Image Formats: JPEG, PNG, BMP, and more.
-Video Formats: MP4, AVI, MKV, and others.
-Text Formats: TXT, CSV, XML, and more.
+- Image Formats: JPEG, PNG, BMP, and more.
+- Video Formats: MP4, AVI, MKV, and others.
+- Text Formats: TXT, CSV, XML, and more.
 
 # Requirements:
 Linux-based operating system (Tested on Ubuntu 20.04 LTS)
@@ -53,16 +53,13 @@ cd rMETAshell
 Run the script with the desired options:
 ```
 ./rMETAshell [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> <URL>
-Replace [OPTIONS], <REVERSE_SHELL_COMMAND>, <filename>, and <URL> with the appropriate values. For more details, use the -h or --help option.
-
 ```
+Replace [OPTIONS], <REVERSE_SHELL_COMMAND>, <filename>, and <URL> with the appropriate values. For more details, use the -h or --help option.
 
 Follow the prompts to select an execution method based on the file format.
 **Warning: Ethical and Responsible Use Only
 rMETAshell is intended for legitimate and ethical purposes, such as penetration testing, cybersecurity assessments, and educational use. Unauthorized use of this tool for malicious activities is strictly prohibited and may have serious legal consequences. Ensure that you have proper authorization and adhere to all applicable laws and regulations before using rIMGshell.**
 
-
 ## License
-
 
 This project is licensed under the [AGPL-3.0 license](LICENSE).
