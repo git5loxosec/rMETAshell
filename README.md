@@ -22,7 +22,7 @@ rMETAshell is a command-line tool for injecting a reverse shell command into the
 rMETAshell takes a reverse shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 # Features:
-Metadata-Based Shell Injection: Inject reverse shell commands into image, video, and text file metadata, ensuring seamless integration with target systems.
+Metadata-Based Shell Injection: Inject reverse shell commands into image, video, and text file, ensuring seamless integration with target systems.
 
 One-Liner Generation: Automatically generate one-liners for quick and efficient remote shell access. Choose from a variety of execution methods tailored to different file formats.
 
@@ -42,7 +42,7 @@ Zip and Rar archive support
 
 Clone the repository:
 ```
-git clone https://github.com/git5loxosec/rMETAshell.git
+git clone https://github.com/git5loxosec/rMETAshell
 ```
 
 Navigate to the rMETAshell directory:
