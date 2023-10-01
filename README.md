@@ -1,4 +1,4 @@
-# LATEST UPDATE: 11:09 PM Saturday, September 30, 2023 Coordinated Universal Time (UTC)
+# LATEST UPDATE: 8:34 PM Sunday, October 1, 2023 Coordinated Universal Time (UTC)
 # THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
 # rMETAshell - A Reverse Shell Metadata Injection and One-Liner Generation Toolkit
 
