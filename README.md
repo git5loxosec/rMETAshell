@@ -33,9 +33,9 @@ Supported File Formats: rMETAshell supports the following file formats for shell
 - Text Formats: TXT, CSV, XML, and more.
 
 # Requirements:
-Linux-based operating system (Tested on Ubuntu 20.04 LTS)
+Linux-based operating system (Tested on Kali 2023.3,Ubuntu 20.04 LTS and Termux)
 Dependencies: ExifTool, Exiv2, ImageMagick (identify), FFprobe, Curl, Sed
-Compatible file formats: Media (e.g., images, videos), Text files (e.g., HTML, XML)
+Compatible file formats: Media (e.g., images, videos), Text files (e.g., TXT, HTML, XML)
 Zip and Rar archive support
 
 # Installation:
@@ -54,7 +54,7 @@ Run the script with the desired options:
 ```
 ./rMETAshell [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> <URL>
 ```
-Replace [OPTIONS], <REVERSE_SHELL_COMMAND>, <filename>, and <URL> with the appropriate values. For more details, use the -h or --help option.
+Replace ```[OPTIONS], <REVERSE_SHELL_COMMAND>, <filename>, and <URL>``` with the appropriate values. For more details, use the -h or --help option.
 
 Follow the prompts to select an execution method based on the file format.
 **Warning: Ethical and Responsible Use Only
