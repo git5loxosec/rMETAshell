@@ -1,65 +1,72 @@
-# LATEST UPDATE: 8:34 PM Sunday, October 1, 2023 Coordinated Universal Time (UTC)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fgit5loxosec%2FMETAshell%2F&label=Repo%20visits&countColor=%23263759)
+
+# LATEST UPDATE: Ver. Sun/Jan/28/2024 - 17:54:08 UTC
 # THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
-# rMETAshell - A Reverse Shell Metadata Injection and One-Liner Generation Toolkit
+# NO NOOBS ALLOWED
+# METAshell is an innovative tool designed for shell command metadata injection and dynamic one-liner generation.
+# METAshell takes a shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/git5loxosec) [![Kali Linux Compatible](https://img.shields.io/badge/Kali%20Linux-Compatible-brightgreen)](https://www.kali.org/)
- <img src="https://camo.githubusercontent.com/f25217d6db3b6cb603d9fb4a2b017a682aae3b1ec5c6ffab653f6cd31eceb73c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446576656c6f7065642532306f6e2d6b616c692532306c696e75782d626c756576696f6c6574"> 
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
 ![Static](https://img.shields.io/badge/License-AGPL_3.0-gold.svg)
 
-<img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell1.png">
-Clean image file no reverse shell.
-<img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell2.png">
-The reverse shell injection method used here wont affect the integrity of the image file.
-<img src="https://github.com/git5loxosec/rMETAshell/blob/main/github_rimgshell3.png">
-Connection established, mission accomplished!
+![Screenshot_2024-01-11_09_45_54](https://github.com/git5loxosec/METAshell/assets/137344845/8a824d6a-64fe-4365-9f93-22ee0f307af2)
+Help!
 
-# Description:
+![Screenshot_2024-01-11_09_47_20](https://github.com/git5loxosec/METAshell/assets/137344845/a0fdecef-2db0-4c9a-9486-84e506666a5a)
+Inject shell commands into the media file metadata. Enter manually or customize your arsenal!
 
-rMETAshell is a command-line tool for injecting a reverse shell command into the metadata and generating one-liner execution methods.
+![Screenshot_2024-01-11_09_48_03](https://github.com/git5loxosec/METAshell/assets/137344845/313b46c7-f640-4752-a1c6-51fdd50d5bc2)
+Generate the execution method!
 
-# How It Works:
-rMETAshell takes a reverse shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
+![Screenshot_2024-01-11_09_51_42](https://github.com/git5loxosec/METAshell/assets/137344845/2314e843-23b7-433f-ad82-319e6351f564)
+Injection completed!
 
-# Features:
-Metadata-Based Shell Injection: Inject reverse shell commands into image, video, and text file, ensuring seamless integration with target systems.
+# Features
+- Metadata Injection: Inject shell commands into media and text files efficiently.
+- One-Liner Generation: Create executable one-liners for various environments and purposes.
+- Customization: Flexibility in choosing predefined scripts or adding custom commands.
+- Encoding: Encode the generated one-liner using base64.
+- Cross-Platform Compatibility: Support for multiple media and text file formats.
 
-One-Liner Generation: Automatically generate one-liners for quick and efficient remote shell access. Choose from a variety of execution methods tailored to different file formats.
+# Installation
 
-Supported File Formats: rMETAshell supports the following file formats for shell injection and one-liner generation:
-
-- Image Formats: JPEG, PNG, BMP, and more.
-- Video Formats: MP4, AVI, MKV, and others.
-- Text Formats: TXT, CSV, XML, and more.
-
-# Requirements:
-Linux-based operating system (Tested on Kali 2023.3,Ubuntu 20.04 LTS and Termux)
-Dependencies: ExifTool, Exiv2, ImageMagick (identify), FFprobe, Curl, Sed
-Compatible file formats: Media (e.g., images, videos), Text files (e.g., TXT, HTML, XML)
-Zip and Rar archive support
-
-# Installation:
-
-Clone the repository:
+# Clone the repository
 ```
 git clone https://github.com/git5loxosec/rMETAshell
 ```
 
-Navigate to the rMETAshell directory:
+# Navigate to the METAshell directory
 ```
 cd rMETAshell
 ```
 
-Run the script with the desired options:
+# Make the script executable
 ```
-./rMETAshell [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> <URL>
+chmod +x rmetashell.sh
 ```
-Replace ```[OPTIONS], <REVERSE_SHELL_COMMAND>, <filename>, and <URL>``` with the appropriate values. For more details, use the -h or --help option.
 
-Follow the prompts to select an execution method based on the file format.
-**Warning: Ethical and Responsible Use Only
-rMETAshell is intended for legitimate and ethical purposes, such as penetration testing, cybersecurity assessments, and educational use. Unauthorized use of this tool for malicious activities is strictly prohibited and may have serious legal consequences. Ensure that you have proper authorization and adhere to all applicable laws and regulations before using rIMGshell.**
+# Usage
 
-## License
+```
+./rmetashell.sh [OPTIONS] <filename> <URL>
+```
 
-This project is licensed under the [AGPL-3.0 license](LICENSE).
+# Options:
+-h, --help           Display help.
+-c, --choose         Choose a script from a list.
+
+# Arguments:
+<filename>           Name of the file to inject.
+<URL>                URL to upload the file.
+File Format Compatibility
+Lists of compatible media and text file formats are provided to ensure reliable injection.
+
+# Video tutorial:
+[![rMETAshell tutorial](https://img.youtube.com/vi/pNptr0LkrNk/0.jpg)](https://www.youtube.com/watch?v=pNptr0LkrNk)
+
+# Contributing
+Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+# Disclaimer
+rMETAshell is intended for educational and ethical use only. Any misuse of this tool for malicious activities is strictly prohibited.
