@@ -6,6 +6,8 @@
 # rMETAshell is an innovative tool designed for shell command metadata injection and dynamic one-liner generation.
 # rMETAshell takes a shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
+# rMETAshell FEATURED ON [LINUXHUNTERS.COM](https://www.linuxhunters.com/) 13 Jan, 2024 ARTICLE!
+
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/git5loxosec) [![Kali Linux Compatible](https://img.shields.io/badge/Kali%20Linux-Compatible-brightgreen)](https://www.kali.org/)
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
 ![Static](https://img.shields.io/badge/License-AGPL_3.0-gold.svg)
