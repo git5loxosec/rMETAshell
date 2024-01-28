@@ -1,25 +1,25 @@
-![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fgit5loxosec%2FMETAshell%2F&label=Repo%20visits&countColor=%23263759)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fgit5loxosec%2FrMETAshell%2F&label=Repo%20visits&countColor=%23263759)
 
 # LATEST UPDATE: Ver. Sun/Jan/28/2024 - 17:54:08 UTC
 # THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
 # NO NOOBS ALLOWED
-# METAshell is an innovative tool designed for shell command metadata injection and dynamic one-liner generation.
-# METAshell takes a shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
+# rMETAshell is an innovative tool designed for shell command metadata injection and dynamic one-liner generation.
+# rMETAshell takes a shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/git5loxosec) [![Kali Linux Compatible](https://img.shields.io/badge/Kali%20Linux-Compatible-brightgreen)](https://www.kali.org/)
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
 ![Static](https://img.shields.io/badge/License-AGPL_3.0-gold.svg)
 
-![Screenshot_2024-01-11_09_45_54](https://github.com/git5loxosec/METAshell/assets/137344845/8a824d6a-64fe-4365-9f93-22ee0f307af2)
+![Screenshot_2024-01-11_09_45_54](https://github.com/git5loxosec/rMETAshell/assets/137344845/8a824d6a-64fe-4365-9f93-22ee0f307af2)
 Help!
 
-![Screenshot_2024-01-11_09_47_20](https://github.com/git5loxosec/METAshell/assets/137344845/a0fdecef-2db0-4c9a-9486-84e506666a5a)
+![Screenshot_2024-01-11_09_47_20](https://github.com/git5loxosec/rMETAshell/assets/137344845/a0fdecef-2db0-4c9a-9486-84e506666a5a)
 Inject shell commands into the media file metadata. Enter manually or customize your arsenal!
 
-![Screenshot_2024-01-11_09_48_03](https://github.com/git5loxosec/METAshell/assets/137344845/313b46c7-f640-4752-a1c6-51fdd50d5bc2)
+![Screenshot_2024-01-11_09_48_03](https://github.com/git5loxosec/rMETAshell/assets/137344845/313b46c7-f640-4752-a1c6-51fdd50d5bc2)
 Generate the execution method!
 
-![Screenshot_2024-01-11_09_51_42](https://github.com/git5loxosec/METAshell/assets/137344845/2314e843-23b7-433f-ad82-319e6351f564)
+![Screenshot_2024-01-11_09_51_42](https://github.com/git5loxosec/rMETAshell/assets/137344845/2314e843-23b7-433f-ad82-319e6351f564)
 Injection completed!
 
 # Features
@@ -33,23 +33,23 @@ Injection completed!
 
 # Clone the repository
 ```
-git clone https://github.com/git5loxosec/rMETAshell
+git clone https://github.com/git5loxosec/rrMETAshell
 ```
 
-# Navigate to the METAshell directory
+# Navigate to the rMETAshell directory
 ```
-cd rMETAshell
+cd rrMETAshell
 ```
 
 # Make the script executable
 ```
-chmod +x rmetashell.sh
+chmod +x rrMETAshell.sh
 ```
 
 # Usage
 
 ```
-./rmetashell.sh [OPTIONS] <filename> <URL>
+./rrMETAshell.sh [OPTIONS] <filename> <URL>
 ```
 
 # Options:
@@ -63,10 +63,10 @@ File Format Compatibility
 Lists of compatible media and text file formats are provided to ensure reliable injection.
 
 # Video tutorial:
-[![rMETAshell tutorial](https://img.youtube.com/vi/pNptr0LkrNk/0.jpg)](https://www.youtube.com/watch?v=pNptr0LkrNk)
+[![rrMETAshell tutorial](https://img.youtube.com/vi/pNptr0LkrNk/0.jpg)](https://www.youtube.com/watch?v=pNptr0LkrNk)
 
 # Contributing
 Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 # Disclaimer
-rMETAshell is intended for educational and ethical use only. Any misuse of this tool for malicious activities is strictly prohibited.
+rrMETAshell is intended for educational and ethical use only. Any misuse of this tool for malicious activities is strictly prohibited.
