@@ -33,23 +33,23 @@ Injection completed!
 
 # Clone the repository
 ```
-git clone https://github.com/git5loxosec/rrMETAshell
+git clone https://github.com/git5loxosec/rMETAshell
 ```
 
 # Navigate to the rMETAshell directory
 ```
-cd rrMETAshell
+cd rMETAshell
 ```
 
 # Make the script executable
 ```
-chmod +x rrMETAshell.sh
+chmod +x rMETAshell.sh
 ```
 
 # Usage
 
 ```
-./rrMETAshell.sh [OPTIONS] <filename> <URL>
+./rMETAshell.sh [OPTIONS] <filename> <URL>
 ```
 
 # Options:
@@ -63,10 +63,10 @@ File Format Compatibility
 Lists of compatible media and text file formats are provided to ensure reliable injection.
 
 # Video tutorial:
-[![rrMETAshell tutorial](https://img.youtube.com/vi/pNptr0LkrNk/0.jpg)](https://www.youtube.com/watch?v=pNptr0LkrNk)
+[![rMETAshell tutorial](https://img.youtube.com/vi/pNptr0LkrNk/0.jpg)](https://www.youtube.com/watch?v=pNptr0LkrNk)
 
 # Contributing
 Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 # Disclaimer
-rrMETAshell is intended for educational and ethical use only. Any misuse of this tool for malicious activities is strictly prohibited.
+rMETAshell is intended for educational and ethical use only. Any misuse of this tool for malicious activities is strictly prohibited.
