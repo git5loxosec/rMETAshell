@@ -23,19 +23,30 @@
 # Facebook
 # https://www.facebook.com/profile.php?id=61551530174528
 # ------------------------------------------------
+# YouTube
+# https://youtube.com/git5loxosec
+# ------------------------------------------------
+    echo ""
+    echo -e "\e[36m          ##   ##  #######  ######     ##  \e[0m   \e[0;31m         ###                ###      ###\e[0m"    
+    echo -e "\e[36m          ### ###   ##   #  # ## #    #### \e[0m   \e[0;31m          ##                 ##       ##\e[0m"    
+    echo -e "\e[1;30m # #### \e[0m  \e[36m#######   ##        ##     ##  ##\e[0m   \e[0;31m #####    ##       ####      ##       ##\e[0m"    
+    echo -e "\e[1;30m  ##  ##\e[0m  \e[36m#######   ####      ##     ##  ##\e[0m   \e[0;31m##        #####   ##  ##     ##       ##\e[0m"    
+    echo -e "\e[1;30m  ##    \e[0m  \e[36m## # ##   ##        ##     ######\e[0m   \e[0;31m #####    ##  ##  ######     ##       ##\e[0m"    
+    echo -e "\e[1;30m  ##    \e[0m  \e[36m##   ##   ##   #    ##     ##  ##\e[0m   \e[0;31m     ##   ##  ##  ##         ##       ##\e[0m"    
+    echo -e "\e[1;30m ####   \e[0m  \e[36m##   ##  #######   ####    ##  ##\e[0m   \e[0;31m######   ###  ##   #####    ####     ####\e[0m"   
+    echo ""                                                                                      
 
-#!/bin/bash
 
 show_help() {
-    echo -e "\e[36mUsage: $0 [OPTIONS] <REVERSE_SHELL_COMMAND> <filename> <URL>\e[0m"
+    echo -e "\e[36mUsage: $0 [OPTIONS] <COMMAND_TO_INJECT> <filename> <URL>\e[0m"
     echo -e "\e[36mInject a command into a media file, generate a one-liner execution method and more!.\e[0m"
     echo ""
     echo -e "\e[36mOptions:\e[0m"
-    echo "  -h, --help           Display this help message."
-    echo "  -e, --encode         Encode the one-liner with base64."
+    echo "  -h, --help           	   Display this help message."
+    echo "  -e, --encode         	   Encode the one-liner with base64."
     echo ""
     echo -e "\e[36mArguments:\e[0m"
-    echo -e "\e[36m  <REVERSE_SHELL_COMMAND> The reverse shell command to inject.\e[0m"
+    echo -e "\e[36m  <COMMAND_TO_INJECT>   The command to inject into the file (e.g. reverse shell or custom script.\e[0m"
     echo -e "\e[36m  <filename>            The name of the file (e.g., example.png OR example.mp4.\e[0m"
     echo -e "\e[36m  <URL>                 The URL path to upload the file (e.g., http://www.example.com).\e[0m"
     echo ""
