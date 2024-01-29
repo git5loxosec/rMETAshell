@@ -2,7 +2,7 @@
 
 # LATEST UPDATE: Ver. Sun/Jan/28/2024 - 17:54:08 UTC
 # THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
-# NO NOOBS ALLOWED
+# NEW FEATURE - Base64 encoding.
 # rMETAshell is an innovative tool designed for shell command metadata injection and dynamic one-liner generation.
 # rMETAshell takes a shell command and an image, video or text file as input. It then injects the command into the file using metadata comments. After injection, it generates a one-liner execution method for retrieving and executing the injected command from a remote location.
 
