@@ -12,17 +12,23 @@
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
 ![Static](https://img.shields.io/badge/License-AGPL_3.0-gold.svg)
 
-![Screenshot_2024-01-11_09_45_54](https://github.com/git5loxosec/METAshell/assets/137344845/8a824d6a-64fe-4365-9f93-22ee0f307af2)
-Help!
+![Screenshot_2024-01-28_20_45_28](https://github.com/git5loxosec/rMETAshell/assets/137344845/2d4fa9a2-30aa-4c4b-a48d-b5ae66f8f0c9)
+Inject your prefered command into any media file or text-based file, like jpg, mp4 and txt!
 
-![Screenshot_2024-01-11_09_47_20](https://github.com/git5loxosec/METAshell/assets/137344845/a0fdecef-2db0-4c9a-9486-84e506666a5a)
-Inject shell commands into the media file metadata. Enter manually or customize your arsenal!
+![Screenshot_2024-01-28_20_45_50](https://github.com/git5loxosec/rMETAshell/assets/137344845/2974609e-fe2e-46f7-833e-479f0e256d7c)
+5 new base64 encoding and decoding methods for your generated one-liner!
 
-![Screenshot_2024-01-11_09_48_03](https://github.com/git5loxosec/METAshell/assets/137344845/313b46c7-f640-4752-a1c6-51fdd50d5bc2)
-Generate the execution method!
+![Screenshot_2024-01-28_20_46_07](https://github.com/git5loxosec/rMETAshell/assets/137344845/b0754cff-752b-4b2c-bd2a-1ca29e423030)
+One-liner generated with base64 encoding.
 
-![Screenshot_2024-01-11_09_51_42](https://github.com/git5loxosec/METAshell/assets/137344845/2314e843-23b7-433f-ad82-319e6351f564)
-Injection completed!
+![Screenshot_2024-01-28_20_47_00](https://github.com/git5loxosec/rMETAshell/assets/137344845/9a643174-8e80-4cce-bb0d-871a0abcf793)
+Run it on a remote machine.
+
+![Screenshot_2024-01-28_20_47_13](https://github.com/git5loxosec/rMETAshell/assets/137344845/5386ee24-b646-441f-b745-f69fe221e5ec)
+Executed and running without problems, the generated one-liner was a success!
+
+![Screenshot_2024-01-28_20_47_31](https://github.com/git5loxosec/rMETAshell/assets/137344845/0cd78a77-c0d0-4d16-ab4d-90956412c960)
+And Have fun, responsibly!
 
 # Features
 - Metadata Injection: Inject shell commands into media and text files efficiently.
