@@ -57,7 +57,7 @@ chmod +x rMETAshell.sh
 # Usage
 
 ```
-./rMETAshell.sh [OPTIONS] <filename> <URL>
+./rMETAshell.sh [OPTIONS] <command> <filename> <URL>
 ```
 
 # Options:
@@ -65,6 +65,7 @@ chmod +x rMETAshell.sh
 -e, --encode         Encode using base64.
 
 # Arguments:
+<command>            Command for injection into the media file.
 <filename>           Name of the file to inject command (e.g. example.png).
 <URL>                Server URL (e.g. http://www.example.com).
 File Format Compatibility
