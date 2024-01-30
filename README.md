@@ -1,6 +1,6 @@
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fgit5loxosec%2FrMETAshell%2F&label=Repo%20visits&countColor=%23263759)
 
-# MAJOR UPDATED: 01:38:43 UTC Monday, January 29, 2024
+# MAJOR UPDATE: 01:38:43 UTC Monday, January 29, 2024
 # THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
 # NEW FEATURE - Base64 encoding.
 # rMETAshell is an innovative tool designed for shell command metadata injection and dynamic one-liner generation.
