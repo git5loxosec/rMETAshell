@@ -28,11 +28,12 @@ Executed and running without problems, the generated one-liner was a success!
 And Have fun, responsibly!
 
 # Features
-- Metadata Injection: Inject shell commands into media and text files efficiently.
-- One-Liner Generation: Create executable one-liners for various environments and purposes.
-- Customization: Flexibility in choosing predefined scripts or adding custom commands.
-- Encoding: Encode the generated one-liner using base64.
-- Cross-Platform Compatibility: Support for multiple media and text file formats.
+- Command injection into media and text files.
+- Automatic generation of one-liner execution methods.
+- Compatibility with various image, video, and text file formats.
+- Option to encode the one-liner using base64.
+- Multiple decoding methods for the base64-encoded one-liner.
+- Easy-to-use command-line interface.
 
 # Installation
 
