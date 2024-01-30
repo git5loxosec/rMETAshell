@@ -1,9 +1,9 @@
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fgit5loxosec%2FrMETAshell%2F&label=Repo%20visits&countColor=%23263759)
 # rMETAshell
 ## MAJOR UPDATE: 01:38:43 UTC Monday, January 29, 2024
-## THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
 ## rMETAshell is a versatile command-line tool designed to inject commands into media and text files, facilitating the creation of one-liner execution methods for various file formats. It offers an easy way to embed commands such as reverse shells or custom scripts into files, which can then be used for various purposes, including security testing and penetration testing.
 ## FEATURED ON [LINUXHUNTERS.COM](https://www.linuxhunters.com/2024/01/metashell-injecting-commands-via.html) Jan 13, 2024 ARTICLE!
+## THIS PROJECT IS UNDER CONSTANT DEVELOPMENT!
 
 [![Sponsor](https://img.shields.io/badge/Sponsor-%E2%9D%A4-red)](https://github.com/sponsors/git5loxosec) [![Kali Linux Compatible](https://img.shields.io/badge/Kali%20Linux-Compatible-brightgreen)](https://www.kali.org/)
  ![Language](https://img.shields.io/badge/Language-Bash-green.svg)
