@@ -15,7 +15,7 @@
 # https://github.com/git5loxosec
 # ------------------------------------------------
 # Website
-# https://www.LoxoSec.rf.gd
+# http://www.LoxoSec.rf.gd
 # ------------------------------------------------
 # X
 # https://x.com/git5loxosec
