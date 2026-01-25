@@ -39,7 +39,7 @@ And Have fun, responsibly!
 
 # Clone the repository
 ```
-git clone https://github.com/git5loxosec/rMETAshell
+git clone https://github.com/git5loxosec/rMETAshell.git
 ```
 
 # Navigate to the rMETAshell directory
